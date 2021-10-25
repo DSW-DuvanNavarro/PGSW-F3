@@ -38,85 +38,148 @@
       
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="cal1-tab" data-bs-toggle="tab" data-bs-target="#cal1" type="button" role="tab" aria-controls="cal1" aria-selected="true">Calculadora Ventas</button>
+              <button class="nav-link active" id="cal1-tab" data-bs-toggle="tab" data-bs-target="#cal1" type="button" role="tab" aria-controls="cal1" aria-selected="true">Calculadora de Ventas</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="cal2-tab" data-bs-toggle="tab" data-bs-target="#cal2" type="button" role="tab" aria-controls="cal2" aria-selected="false">Calculadora Datos</button>
+              <button class="nav-link" id="cal2-tab" data-bs-toggle="tab" data-bs-target="#cal2" type="button" role="tab" aria-controls="cal2" aria-selected="false">Conversor de Unidades</button>
             </li>
         </ul>
+
         <div class="tab-content" id="myTabContent">
+
             <div class="tab-pane fade show active" id="cal1" role="tabpanel" aria-labelledby="cal1-tab">
-                <form class="col-8 mx-auto pt-4">
-                    <div class="input-group">
-                        <span class="input-group-text col-4" id="basic-addon1">$ Valor de compra</span>
-                        <input type="number" min="1" class="form-control" placeholder="5000" aria-label="txtVC" aria-describedby="basic-addon1">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text col-4" id="basic-addon2">% Utilidad o ganancia</span>
-                        <input type="number" min="1" max="100" class="form-control" placeholder="30" aria-label="txtUG" aria-describedby="basic-addon2">
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text col-4" id="basic-addon3">% IVA</span>
-                        <input type="number" min="1" max="100" class="form-control" placeholder="19" aria-label="txtIVA" aria-describedby="basic-addon3">
-                    </div>                    
-                    <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary">Calcular</button>
-                    </div>
-                </form>
-                <div class="col-8 mx-auto pt-4">
-                    <div class="input-group">
-                        <span class="input-group-text col-4" id="basic-addon4">Valor de venta </span>
-                        <span class="input-group-text" id="basic-addon4">$</span>
-                        <input type="text" class="form-control" placeholder="" aria-label="txtVV" aria-describedby="basic-addon4" readonly>
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text col-4" id="basic-addon5">Ganancia </span>
-                        <span class="input-group-text" id="basic-addon5">$</span>
-                        <input type="text" class="form-control" placeholder="" aria-label="txtGN" aria-describedby="basic-addon5" readonly>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="cal2" role="tabpanel" aria-labelledby="cal2-tab">
-                <div class="row pt-4">
-                    <div class="col-3">
-                        <div class="input-group">
-                            <input type="number" min="1" class="form-control" placeholder="5000" aria-label="txtVC" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group">
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="0" selected>Byte</option>
-                                <option value="1">Kilobyte</option>
-                                <option value="2">Megabyte</option>
-                                <option value="3">Gigabyte</option>
-                                <option value="3">Terabyte</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-1 text-center">
-                        <i class="fas fa-equals pt-4"></i>
-                    </div>
-                    <div class="col-3">
-                        <div class="input-group">
-                            <input type="number" min="1" class="form-control" placeholder="5000" aria-label="txtVC" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group">
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="0" selected>Byte</option>
-                                <option value="1">Kilobyte</option>
-                                <option value="2">Megabyte</option>
-                                <option value="3">Gigabyte</option>
-                                <option value="3">Terabyte</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+
                 
+                <form name="f1" action="" method="POST" class="col-8 mx-auto pt-4">
+
+                    <div class="input-group">
+                        
+                        <div class="input-group">
+
+                            <span class="input-group-text col-4" id="basic-addon1">Valor de Compra</span>
+                            <input type="number" class="form-control" id="vc" placeholder="$5000" name="vc">
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <span class="input-group-text col-4" id="basic-addon2">Utilidad o Ganancia (%)</span>
+                            <input type="number" class="form-control" id="ut" min="1" max="100" placeholder="30%" name="ut">
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <span class="input-group-text col-4" id="basic-addon3">IVA (%)</span>
+                            <input type="number" class="form-control" id="i" min="1" max="100" placeholder="19%" name="i">
+
+                        </div>
+
+
+
+                        <div id="bConver">
+
+                            
+                            <button type="button" class="btn btn-primary btn-lg"  value="Calcular" onclick="CalcularVenta()">Calcular</button>
+                            
+                            <button type="reset" class="btn btn-primary btn-lg" value="Limpiar" onclick="Reset()">Limpiar</button>
+                            
+                            
+                        </div>
+
+                      
+                        <div class="input-group">
+                            
+
+                            <span class="input-group-text col-4" id="basic-addon1">Valor de Venta ($)</span>
+                            <input type="number" class="form-control" id="vv" placeholder="" name="vv" readonly>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <span class="input-group-text col-4" id="basic-addon1">Ganancia ($)</span>
+                            <input type="number" class="form-control" id="gn" placeholder="" name="gn" readonly>
+
+                        </div>
+
+
+                      </div>
+                
+                  </form>
+
+
+
+
+
             </div>
+
+            <div class="tab-pane fade" id="cal2" role="tabpanel" aria-labelledby="cal2-tab">
+
+
+                <form name="f2" action="" method="POST" class="col-3 mx-auto row pt-4">
+
+                    <div class="input-group">
+
+                    
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="a" name="a" placeholder="Digite aquí el valor a convertir" style="width: 300px; text-align: center;">
+                    </div>
+                    
+  
+                    <div class="input-group">
+
+                        <select name="b1" class="form-select"style="width: 300px; text-align: center;">
+                            <option value="1000000000">BYTE (B)</option>
+                            <option value="1000000">KILOBYTE (KB)</option>
+                            <option value="1000">MEGABYTE (MB)</option>
+                            <option value="1">GIGABYTE (GB)</option>
+                            <option value="0.001">TERABYTE (TB)</option>
+                        </select>
+
+                    </div>
+
+                    
+
+                    <div class="d-grid gap-2" id="bConvertir">
+                        <button type="button" class="btn btn-primary" onclick="Convertir()">Convertir</button> 
+                    </div>
+
+                    
+                    <div class="input-group">
+
+                        <select name="b2" class="form-select"style="width: 300px; text-align: center;">
+                            <option value="1000000000">BYTE (B)</option>
+                            <option value="1000000">KILOBYTE (KB)</option>
+                            <option value="1000">MEGABYTE (MB)</option>
+                            <option value="1">GIGABYTE (GB)</option>
+                            <option value="0.001">TERABYTE (TB)</option>
+                        </select>
+
+                    </div>
+
+                        <fieldset disabled>
+                        <input type="text" class="form-control" id="c" name="c" placeholder="Resultado"style="width: 300px; text-align: center;">
+
+                    </div>
+
+	</div>
+
+                </form>
+
+
+            
+
+            
+
         </div>
 
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="js/customscript.js"></script>
 
 </body>
 </html>
