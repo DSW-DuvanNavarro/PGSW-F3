@@ -5,6 +5,8 @@ msg = 01 -> La base de datos no existe para realizar esta acción.
 msg = 02 -> No se ha podido crear la base de datos. Verifique si la base de datos ya existe o hubo un error desconocido.
 msg = 03 -> No se ha podido crear la tabla Producto. 
 msg = 04 -> LA BASE DE DATOS FUE CREADA CON ÉXITO. 
+msg = 05 -> TABLA CREADA CON ÉXITO.
+msg = 06 -> No se ha podido crear la tabla. Verifique si ya existe o hubo un error desconocido.
 */
 $msg = "";
 $color = "alert-danger";
@@ -22,9 +24,11 @@ switch ($msg) {
     case 04:
         $msg = "LA BASE DE DATOS FUE CREADA CON ÉXITO. ";
         $color = "alert-success";
+        break;
     case 05:
         $msg = "TABLA CREADA CON ÉXITO. ";
         $color = "alert-success";
+        break;
     case 06:
         $msg = "No se ha podido crear la tabla. Verifique si ya existe o hubo un error desconocido.";
         break;

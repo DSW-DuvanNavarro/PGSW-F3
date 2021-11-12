@@ -14,7 +14,7 @@
             <li><a class="dropdown-item" href="gestionBD.php">Crear Base de datos</a></li>
             <li><a class="dropdown-item" href="crearTablaBD.php">Crear Tabla</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Generar Reporte PDF</a></li>
+            <li><a class="dropdown-item" href="generarPDF.php">Generar Reporte PDF</a></li>
             <li><a class="dropdown-item" href="backUpBD.php">Generar BackUp</a></li>
             </ul>
         </li>
