@@ -12,27 +12,7 @@
 </head>
 <body>
     
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">PCElectronics </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link" href="admin.html">Administrador</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="inventario.html">Inventario</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="utilidad.html">Utilidades</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<?php include_once "include/menumain.php"; ?>
     
     <main class="container">
       
@@ -40,7 +20,7 @@
             <i class="fas fa-laptop-code fa-9x animate__animated animate__bounce animate__repeat-2"></i><br><br>
             <h1 class="display-5 fw-bold">Programación de sitios web</h1>
             <div class="col-lg-6 mx-auto">
-              <p class="lead mb-4">Fase 3 Diseño e implementación frontend.</p>
+              <p class="lead mb-4">Fase 4 Diseño e implementación backend.</p>
               <p><b>Grupo: 301127_4</b></p>              
             </div>
         </div>
