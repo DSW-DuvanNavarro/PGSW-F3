@@ -32,6 +32,19 @@ switch ($msg) {
     case 06:
         $msg = "No se ha podido crear la tabla. Verifique si ya existe o hubo un error desconocido.";
         break;
+    case 07:
+        $msg = "Error al contruir petición.";
+        break;
+    case 10:
+        $msg = "Error al ejecutar petición.";
+        break;
+    case 11:
+        $msg = "Parametrización inválida.";
+        break;
+    case 12:
+        $msg = "Petición realizada con éxito!";
+        $color = "alert-success";
+        break;
             
     default:
         $msg = "*************************";
